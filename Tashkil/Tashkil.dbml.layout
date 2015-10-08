@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Tashkil">
+  <DataContextMoniker Name="/TashkilDataContext" />
+  <nestedChildShapes>
+    <classShape Id="df489869-acd6-42f4-a1ea-d9ab5603276d" absoluteBounds="3.5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TashkilDataContext/Halaka" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4432f7ce-8fc7-4806-9af7-02d10a7ff6de" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f556017-1f6a-412f-a7a5-4120108722fe" absoluteBounds="0.75, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TashkilDataContext/Markaz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12ff5252-13f7-4f01-8665-97e4e6916c6e" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1554d716-61b6-44e8-86b5-e56e00bd8559" absoluteBounds="6.25, 0.875, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/TashkilDataContext/Masjed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="caf89088-19dc-49c4-9a5e-0b6e2bcce642" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.69314697265625); (3.5 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TashkilDataContext/Markaz/Markaz_Halaka" />
+      <nodes>
+        <classShapeMoniker Id="2f556017-1f6a-412f-a7a5-4120108722fe" />
+        <classShapeMoniker Id="df489869-acd6-42f4-a1ea-d9ab5603276d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.69314697265625); (6.25 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TashkilDataContext/Halaka/Halaka_Masjed" />
+      <nodes>
+        <classShapeMoniker Id="df489869-acd6-42f4-a1ea-d9ab5603276d" />
+        <classShapeMoniker Id="1554d716-61b6-44e8-86b5-e56e00bd8559" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.3862939453125); (3.125 : 2.7612939453125); (3.125 : 2.82859537760417); (5.875 : 2.82859537760417); (6.25 : 2.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TashkilDataContext/Markaz/Markaz_Masjed" />
+      <nodes>
+        <classShapeMoniker Id="2f556017-1f6a-412f-a7a5-4120108722fe" />
+        <classShapeMoniker Id="1554d716-61b6-44e8-86b5-e56e00bd8559" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
