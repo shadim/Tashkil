@@ -1,22 +1,9 @@
 ﻿<Window x:Class="Tashkil.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="383" Width="713" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Canvas>
-        <Canvas.Background>
-            <ImageBrush ImageSource="images/111410-glowing-green-neon-icon-culture-globe-clear-sc44.png" ></ImageBrush> 
-        </Canvas.Background>
-        <Grid x:Name="display" HorizontalAlignment="Left" Height="169" Margin="0,152,0,-1" VerticalAlignment="Top" Width="690" RenderTransformOrigin="0.494,0.53">
-            <Grid HorizontalAlignment="Left" Height="100" Margin="0,-119,0,0" VerticalAlignment="Top" Width="690">
-                <Button Content="إضافة مسخد" HorizontalAlignment="Left" Margin="68,32,0,0" VerticalAlignment="Top" Width="75" BorderBrush="#FF091961" Height="46">
-                    <Button.Effect>
-                        <DropShadowEffect/>
-                    </Button.Effect>
-                </Button>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="176,32,0,0" VerticalAlignment="Top" Width="75"/>
-            </Grid>          
-        </Grid>
-    </Canvas>
-   
-    
+        Title="التشكيل" Height="457" Width="713" Icon="images/Earth-Pic-1.jpg" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" >
+    <Grid FlowDirection="RightToLeft" >
+        <Frame Name="myFrame" FlowDirection="RightToLeft" />
+
+    </Grid>
 </Window>

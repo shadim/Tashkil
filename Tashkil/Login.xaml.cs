@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Tashkil
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Login : PageFunction<String>
     {
-        public Page1()
+        public Login()
         {
             InitializeComponent();
-            //Login login = new Login();
-            //login.Return += new ReturnEventHandler<bool>(OnLoginReturned);
-            //this.NavigationService.Navigate(login);
         }
-
-        private void OnLoginReturned(object sender, ReturnEventArgs<bool> e)
-        {
-            MessageBox.Show(e.Result.ToString());
-        }
-
-
     }
 }

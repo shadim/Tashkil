@@ -6,19 +6,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Page1">
-
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="110,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="155" Height="34" Foreground="#FF832020">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF722895" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background>
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
+        <StackPanel>
+        <TextBlock>
+            <Hyperlink NavigateUri="Page2.xaml" FontFamily="Arial" FontSize="16">إضافة مركز</Hyperlink>
         </TextBlock>
-
-    </Grid>
+        </StackPanel>
 </Page>
