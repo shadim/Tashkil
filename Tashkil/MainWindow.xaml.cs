@@ -1,21 +1,28 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Tashkil
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : NavigationWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+            Login login = new Login();
+            login.Return += new ReturnEventHandler<bool>(login_Return);
+            NavigationService.Navigate(login);
+            //myFrame.Navigate(login);
+            // Create(1);
+        }
 
-            //myFrame.Navigate(new Login());
-           // Create(1);
+        private void login_Return(object sender, ReturnEventArgs<bool> e)
+        {
+            MessageBox.Show("aasdlfkjasldfjasdf");
         }
 
         //public void Create(int rows)
@@ -48,7 +55,7 @@ namespace Tashkil
         //    display.Children.Add(newGrid);
         //}
 
-         void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }

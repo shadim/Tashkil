@@ -8,7 +8,10 @@
 	Title="Page1">
         <StackPanel>
         <TextBlock>
-            <Hyperlink NavigateUri="Page2.xaml" FontFamily="Arial" FontSize="16">إضافة مركز</Hyperlink>
+            <Hyperlink NavigateUri="Page2.xaml">إضافة مركز</Hyperlink>
         </TextBlock>
-        </StackPanel>
+        <TextBlock>
+            <Hyperlink Click="Moskulink_OnClick">إضافة مسجد</Hyperlink>
+        </TextBlock>
+    </StackPanel>
 </Page>

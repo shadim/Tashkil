@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Tashkil
 {
@@ -23,16 +12,19 @@ namespace Tashkil
         public Page1()
         {
             InitializeComponent();
-            //Login login = new Login();
-            //login.Return += new ReturnEventHandler<bool>(OnLoginReturned);
-            //this.NavigationService.Navigate(login);
         }
 
-        private void OnLoginReturned(object sender, ReturnEventArgs<bool> e)
+
+        private void Moskulink_OnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(e.Result.ToString());
+            AddMosku addMosku = new AddMosku();
+            addMosku.Return += AddMosku_Return;
+            NavigationService.Navigate(addMosku);
         }
 
-
+        void AddMosku_Return(object sender, ReturnEventArgs<string> e)
+        {
+            MessageBox.Show(e.Result);
+        }
     }
 }

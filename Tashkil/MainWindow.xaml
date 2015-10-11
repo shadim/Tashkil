@@ -1,9 +1,5 @@
-﻿<Window x:Class="Tashkil.MainWindow"
+﻿<NavigationWindow x:Class="Tashkil.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="التشكيل" Height="457" Width="713" Icon="images/Earth-Pic-1.jpg" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" >
-    <Grid FlowDirection="RightToLeft" >
-        <Frame Name="myFrame" FlowDirection="RightToLeft" />
-
-    </Grid>
-</Window>
+        Title="التشكيل" Height="457" Width="713" Icon="images/Earth-Pic-1.jpg">   
+</NavigationWindow>
