@@ -1,0 +1,70 @@
+﻿<PageFunction
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    x:Class="Tashkil.Center"
+    x:TypeArguments="sys:String"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="300"
+    Title="{StaticResource Centers}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{Binding Path=Name}"></TextBlock>
+
+
+        <DataGrid Grid.Row="1"
+                      HorizontalScrollBarVisibility="Auto"
+                      Grid.Column="0" Name="GrdCircles" 
+                      AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="{StaticResource ID}" Width="50"/>
+                <DataGridHyperlinkColumn 
+                    Binding="{Binding Path=Url}"
+                    ContentBinding="{Binding Path=Name}"
+                    Header="{StaticResource CicleName}" IsReadOnly="True" Width="120" >
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <EventSetter Event="Hyperlink.Click" Handler="CicleHyperlink_OnClick"></EventSetter>
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
+                <DataGridTextColumn Binding="{Binding Path=MoskusCount}" Header="{StaticResource MoskuNumber}" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Path=MuslimCount}" Header="{StaticResource MuslimNumber}" Width="100" />
+                <DataGridTextColumn Binding="{Binding Path=PrayerCount}" Header="{StaticResource PrayerNumber}" Width="100" />
+                <DataGridTextColumn Binding="{Binding Path=MemberCount}" Header="{StaticResource MemeberNumber}" Width="*" />
+            </DataGrid.Columns>
+
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid ItemsSource="{Binding Path=Moskus}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=ID}" Header="{StaticResource ID}" Width="50"/>
+                            <DataGridHyperlinkColumn 
+                                    Binding="{Binding Path=Url}"
+                                    ContentBinding="{Binding Path=Name}"
+                                    Header="{StaticResource MoskuName}" IsReadOnly="True" Width="120" >
+                                <DataGridHyperlinkColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <EventSetter Event="Hyperlink.Click" Handler="MoskuHyperlink_OnClick"></EventSetter>
+                                    </Style>
+                                </DataGridHyperlinkColumn.ElementStyle>
+                            </DataGridHyperlinkColumn>
+                            <DataGridTextColumn Binding="{Binding Path=MuslimCount}" Header="{StaticResource MuslimNumber}"  />
+                            <DataGridTextColumn Binding="{Binding Path=PrayerCount}" Header="{StaticResource PrayerNumber}"  />
+                            <DataGridTextColumn Binding="{Binding Path=MemberCount}" Header="{StaticResource MemeberNumber}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</PageFunction>

@@ -5,13 +5,49 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="Page1">
-        <StackPanel>
-        <TextBlock>
+    Title="{StaticResource Centers}">
+    <Grid>
+        <!--<TextBlock>
             <Hyperlink NavigateUri="Page2.xaml">إضافة مركز</Hyperlink>
         </TextBlock>
         <TextBlock>
             <Hyperlink Click="Moskulink_OnClick">إضافة مسجد</Hyperlink>
         </TextBlock>
-    </StackPanel>
+        <Button Click="Circle_OnClick" Content="circle"></Button>-->
+
+        <TextBlock Text="{StaticResource Centers}" FontSize="48"/>
+
+        <TextBlock>
+            <Hyperlink NavigateUri="HistoryLog.xaml">تشكيل</Hyperlink>
+        </TextBlock>
+        <DataGrid Height="213" Name="Centers" AutoGenerateColumns="False" VerticalAlignment="Center" 
+                  AlternatingRowBackground="Azure" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  FlowDirection="RightToLeft">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="{StaticResource ID}" Width="50"/>
+                <DataGridHyperlinkColumn 
+                    Binding="{Binding Path=Url}"
+                    ContentBinding="{Binding Name}"
+                    Header="{StaticResource CenterName}" IsReadOnly="True" Width="120" >
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <EventSetter Event="Hyperlink.Click" Handler="EventSetter_OnHandler"></EventSetter>
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
+                <DataGridTextColumn Header="{StaticResource CircleNumber}" Width="100"/>
+                <DataGridTextColumn Header="{StaticResource MoskuNumber}" Width="100"/>
+                <DataGridTextColumn Header="{StaticResource MuslimNumber}" Width="100" />
+                <DataGridTextColumn Header="{StaticResource PrayerNumber}" Width="100" />
+                <DataGridTextColumn Header="{StaticResource MemeberNumber}" Width="*" />
+            </DataGrid.Columns>
+
+            <!--<DataGridTemplateColumn>
+             <DataGridTemplateColumn.CellEditingTemplate>
+                 <DataTemplate>
+                     <Hyperlink Click="CenterRow_OnClick">Edit</Hyperlink>
+                 </DataTemplate>
+             </DataGridTemplateColumn.CellEditingTemplate>
+          </DataGridTemplateColumn>-->
+        </DataGrid>
+    </Grid>
 </Page>

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tashkil", "Tashkil\Tashkil.csproj", "{D6063AB5-8750-47F8-8D74-9FB4CAB081E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tashkil.Windows.Theme", "Tashkil.Windows.Theme\Tashkil.Windows.Theme.csproj", "{14B8B00D-A8E4-4832-9FE1-AD68882D9071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SahaWpfTheme20121", "SahaWpfTheme20121\SahaWpfTheme20121.csproj", "{E700F721-81E6-440C-9B37-B3F467CA7CC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,10 @@ Global
 		{14B8B00D-A8E4-4832-9FE1-AD68882D9071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B8B00D-A8E4-4832-9FE1-AD68882D9071}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14B8B00D-A8E4-4832-9FE1-AD68882D9071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E700F721-81E6-440C-9B37-B3F467CA7CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E700F721-81E6-440C-9B37-B3F467CA7CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E700F721-81E6-440C-9B37-B3F467CA7CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E700F721-81E6-440C-9B37-B3F467CA7CC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

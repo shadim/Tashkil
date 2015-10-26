@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="Login">تسجيل الدخول</system:String>
+    <system:String x:Key="Centers">مراكز الدعوه</system:String>
+    <system:String x:Key="CenterName">إسم المركز</system:String>
+    <system:String x:Key="CicleName">إسم الحلفه</system:String>
+    <system:String x:Key="MoskuName">إسم المسجد</system:String>
+    <system:String x:Key="ID">الرقم</system:String>
+    <system:String x:Key="CircleNumber">عدد الحلقات</system:String>
+    <system:String x:Key="MoskuNumber">عددالمساجد</system:String>
+    <system:String x:Key="MemeberNumber">عدد الأحباب</system:String>
+    <system:String x:Key="PrayerNumber">عدد المصلين</system:String>
+    <system:String x:Key="MuslimNumber">عدد المسلمين</system:String>
+    <system:String x:Key="Add">أضف</system:String>
+    <system:String x:Key="FromMosku">من مسجد</system:String>
+    <system:String x:Key="ToMosku">إلى مسجد</system:String>
+    <system:String x:Key="Date">التاريخ</system:String>
+</ResourceDictionary>

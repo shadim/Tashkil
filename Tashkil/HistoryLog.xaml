@@ -1,0 +1,109 @@
+﻿<Page x:Class="Tashkil.HistoryLog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="HistoryLog" FlowDirection="RightToLeft">
+
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto">
+            </RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="20,20,20,20">
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"></RowDefinition>
+                <RowDefinition Height="32"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Padding="5,0,5,0" Grid.Column="0" Text="{StaticResource FromMosku}"></TextBlock>
+
+            <ComboBox Padding="5,5,5,5" Grid.Row="0" Grid.Column="1" Name="fromMosku"
+                  ItemsSource="{Binding Path=DataContext.Moskus, 
+                  RelativeSource={RelativeSource AncestorType={x:Type Page}}}" 
+                  SelectedValuePath="ID" 
+                  DisplayMemberPath="Name"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{StaticResource ToMosku}"></TextBlock>
+            <ComboBox Grid.Row="0" Grid.Column="3" Name="toMosku"
+                  ItemsSource="{Binding Path=DataContext.Moskus, 
+                  RelativeSource={RelativeSource AncestorType={x:Type Page}}}" 
+                  SelectedValuePath="ID" 
+                  DisplayMemberPath="Name"/>
+
+            <TextBlock Padding="5,5,5,5" Grid.Row="1" Grid.Column="0" Text="{StaticResource Date}"></TextBlock>
+            <DatePicker Padding="5,5,5,5" Grid.Column="1" Grid.Row="1" 
+                        SelectedDateFormat="Short" Text="A Select" />
+
+            <Button Padding="5,5,5,5" Grid.Column="3" Grid.Row="1" Content="{StaticResource Add}" 
+                Click="Button_Click_1"/>
+        </Grid>
+
+
+        <DataGrid Margin="20,40,20,20" Grid.Row="1"
+                  CanUserAddRows="False"
+                  Name="GrdHistory" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridComboBoxColumn Header="{StaticResource FromMosku}"
+                                        SelectedValueBinding="{Binding Source}"
+                                        SelectedValuePath="ID"
+                                        DisplayMemberPath="Name">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="ItemsSource" 
+                                    Value="{Binding Path=DataContext.Moskus, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="ItemsSource" 
+                                    Value="{Binding Path=DataContext.Moskus, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+                <DataGridComboBoxColumn Header="{StaticResource ToMosku}"
+                                        SelectedValueBinding="{Binding Destination}"
+                                        SelectedValuePath="ID"
+                                        DisplayMemberPath="Name">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="ItemsSource" 
+                                    Value="{Binding Path=DataContext.Moskus, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Setter Property="ItemsSource" 
+                                    Value="{Binding Path=DataContext.Moskus, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+                <DataGridTemplateColumn Header="{StaticResource Date}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Date}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker  SelectedDate="{Binding Path=Date}"></DatePicker>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid> 
+    </Grid>
+</Page>
